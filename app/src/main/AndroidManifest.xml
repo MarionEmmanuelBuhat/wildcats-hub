@@ -12,11 +12,18 @@
         android:theme="@style/Theme.Wildcatshub"
         tools:targetApi="31">
         <activity
+            android:name=".Login"
+            android:exported="false"
+            android:label="Login"/>
+        <activity
             android:name=".Register"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Register"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="Wildcats Hub"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
