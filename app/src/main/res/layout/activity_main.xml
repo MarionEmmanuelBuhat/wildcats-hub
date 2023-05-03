@@ -6,42 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/bgimg"
+    android:background="@drawable/bgimgwhite"
     android:orientation="vertical"
     >
 
-    <TextView
-        android:id="@+id/welcome"
-        android:layout_width="226dp"
-        android:layout_height="43dp"
-        android:fontFamily="casual"
-        android:text="@string/welcome_teknoy"
-        android:textColor="#930D0D"
-        android:textSize="12pt"
-        android:textStyle="bold"
-        android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/wildcat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/wildcat"
-        android:layout_width="401dp"
-        android:layout_height="223dp"
-        android:layout_marginTop="140dp"
-        android:contentDescription="@string/wildcats"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/layoutmain"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/maroon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/wildcat" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/layoutmain"
-        android:layout_width="401dp"
-        android:layout_height="330dp"
+        android:layout_width="398dp"
+        android:layout_height="641dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,6 +32,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="226dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="casual"
+            android:text="@string/welcome_teknoy"
+            android:textColor="#930D0D"
+            android:textSize="12pt"
+            android:textStyle="bold"
+            android:typeface="normal" />
+
+        <ImageView
+            android:id="@+id/wildcat"
+            android:layout_width="401dp"
+            android:layout_height="223dp"
+            android:layout_marginTop="0dp"
+            android:contentDescription="@string/wildcats"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/wildcat" />
 
     </LinearLayout>
 

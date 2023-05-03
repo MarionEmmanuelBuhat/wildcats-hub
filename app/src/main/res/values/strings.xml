@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">wildcats-hub</string>
+    <string name="app_name">Wildcats Hub</string>
     <string name="registration_form">Registration Form</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
