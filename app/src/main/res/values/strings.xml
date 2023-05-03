@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">wildcats-hub</string>
+    <string name="registration_form">Registration Form</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="cit_email">Institutional Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="already_account">Already have an account?</string>
+    <string name="wildcats">Wildcats</string>
+    <string name="welcome_teknoy">Welcome Teknoy!</string>
 </resources>
