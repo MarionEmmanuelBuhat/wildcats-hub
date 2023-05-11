@@ -135,15 +135,17 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"/>
 
-        <TextView
-            android:id="@+id/already_acc"
+        <Button
+            android:id="@+id/homeButton"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="5dp"
-            android:text="@string/already_account"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="32dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Already have an account?"
+            android:textAllCaps="false"
+            android:textColor="#0072C6"
+            android:textSize="12sp" />
 
     </LinearLayout>
 

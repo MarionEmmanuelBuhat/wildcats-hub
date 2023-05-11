@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mRecyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TaskMain">
@@ -134,5 +135,28 @@
         app:layout_constraintStart_toStartOf="@+id/squareIV"
         app:layout_constraintTop_toTopOf="@+id/squareIV"
         app:srcCompat="@drawable/plus_solid" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="538dp"
+        app:layout_constraintBottom_toTopOf="@+id/materialToolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newListTV" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="214dp"
+        android:layout_height="124dp"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="176dp">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
