@@ -18,7 +18,6 @@ public class HomePage extends AppCompatActivity {
         taskmasterBtn.setOnClickListener(view -> openTaskmaster());
     }
     public void openTaskmaster(){
-        Intent opnTaskmasterInt = new Intent(this, TaskMain.class);
-        startActivity(opnTaskmasterInt);
+        startActivity(new Intent(this, TaskMain.class));
     }
 }
