@@ -160,18 +160,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-<<<<<<< HEAD
-        android:fontFamily="@font/inter_bold"
-=======
         android:textSize="32dp"
         android:fontFamily="@font/inter"
         android:textColor="#B8860B"
         android:text="Welcome\nTeknoy!"
->>>>>>> 83c5208fcbb871b66d02bd113a4a8b52cdc1f8b5
         android:gravity="center"
-        android:text="Welcome\nTeknoy!"
-        android:textColor="#B8860B"
-        android:textSize="32dp"
         app:layout_constraintBottom_toTopOf="@+id/wildcatIV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
