@@ -96,9 +96,10 @@
 
             <Button
                 android:id="@+id/taskmaster"
-                android:layout_width="150dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
-                android:text="@string/taskmaster" />
+                android:text="@string/taskmaster"
+                android:textSize="7pt"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -107,9 +108,10 @@
 
             <Button
                 android:id="@+id/feature2"
-                android:layout_width="150dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
-                android:text="@string/button" />
+                android:text="@string/button"
+                android:textSize="7pt"/>
         </TableRow>
 
         <TableRow
@@ -120,9 +122,10 @@
 
             <Button
                 android:id="@+id/feature3"
-                android:layout_width="150dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
-                android:text="Feature" />
+                android:text="Feature"
+                android:textSize="7pt"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -131,9 +134,10 @@
 
             <Button
                 android:id="@+id/feature4"
-                android:layout_width="150dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
-                android:text="Feature" />
+                android:text="Feature"
+                android:textSize="7pt"/>
         </TableRow>
 
         <TableRow
@@ -144,9 +148,10 @@
 
             <Button
                 android:id="@+id/feature5"
-                android:layout_width="150dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
-                android:text="Feature" />
+                android:text="Feature"
+                android:textSize="7pt"/>
 
             <Space
                 android:layout_width="wrap_content"
