@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         login.setOnClickListener(view -> {
-            startActivity(new Intent(this, TaskMain.class));
+            startActivity(new Intent(this, HomePage.class));
         });
 
         register.setOnClickListener(view -> {
