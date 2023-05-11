@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.wildcats_hub"
-        minSdk 24
+        minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -28,7 +28,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildFeatures {
-        viewBinding true
+        viewBinding false
     }
 }
 
