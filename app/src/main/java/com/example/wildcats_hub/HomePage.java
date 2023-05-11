@@ -14,11 +14,16 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         Button taskmasterBtn = findViewById(R.id.taskmaster);
+        Button directoriesBtn = findViewById(R.id.directory);
 
         taskmasterBtn.setOnClickListener(view -> openTaskmaster());
+        directoriesBtn.setOnClickListener(view -> openDirectories());
     }
 
     public void openTaskmaster(){
         startActivity(new Intent(this, TaskMain.class));
+    }
+    public void openDirectories(){
+        startActivity(new Intent(this, Directories.class));
     }
 }

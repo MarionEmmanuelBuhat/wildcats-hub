@@ -107,10 +107,10 @@
                 android:layout_weight="10"/>
 
             <Button
-                android:id="@+id/feature2"
+                android:id="@+id/directory"
                 android:layout_width="155dp"
                 android:layout_height="wrap_content"
-                android:text="@string/button"
+                android:text="Directory"
                 android:textSize="7pt"/>
         </TableRow>
 
