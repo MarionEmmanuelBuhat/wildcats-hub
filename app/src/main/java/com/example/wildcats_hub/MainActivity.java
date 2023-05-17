@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.loginButton);
         register = findViewById(R.id.createAccButton);
 
+//        startActivity(new Intent(this, SplashScreen.class));
 
         login.setOnClickListener(view -> {
             startActivity(new Intent(this, HomePage.class));

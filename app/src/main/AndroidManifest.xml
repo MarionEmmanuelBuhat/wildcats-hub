@@ -11,6 +11,9 @@
         android:theme="@style/Theme.Wildcatshub"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".Directories"
             android:exported="false" />
         <activity
@@ -31,7 +34,7 @@
             android:exported="false"
             android:label="Register" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
