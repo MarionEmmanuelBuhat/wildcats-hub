@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/taskmenu"
+        android:icon="@drawable/list_solid"
+        android:title="TaskMenu"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/tasksort"
+        android:icon="@drawable/arrows_up_down_solid"
+        android:title="Sort Task"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/taskcalendar"
+        android:icon="@drawable/calendar_regular"
+        android:title="Calendar Views"
+        app:showAsAction="ifRoom" />
+</menu>

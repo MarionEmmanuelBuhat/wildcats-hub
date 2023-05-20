@@ -21,7 +21,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void openTaskmaster(){
-        startActivity(new Intent(this, TaskMain.class));
+        startActivity(new Intent(this, TaskMaster.class));
     }
     public void openDirectories(){
         startActivity(new Intent(this, Directories.class));
