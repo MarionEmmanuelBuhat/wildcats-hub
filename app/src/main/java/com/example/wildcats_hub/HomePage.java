@@ -15,9 +15,11 @@ public class HomePage extends AppCompatActivity {
 
         Button taskmasterBtn = findViewById(R.id.taskmaster);
         Button directoriesBtn = findViewById(R.id.directory);
+        Button mapBtn = findViewById(R.id.btnCITMap);
 
         taskmasterBtn.setOnClickListener(view -> openTaskmaster());
         directoriesBtn.setOnClickListener(view -> openDirectories());
+        mapBtn.setOnClickListener(view -> openMap());
     }
 
     public void openTaskmaster(){
@@ -26,4 +28,5 @@ public class HomePage extends AppCompatActivity {
     public void openDirectories(){
         startActivity(new Intent(this, Directories.class));
     }
+    public void openMap(){startActivity(new Intent(this, CITMap.class));}
 }

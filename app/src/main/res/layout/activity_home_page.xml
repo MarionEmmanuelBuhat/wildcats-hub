@@ -122,10 +122,10 @@
             android:layout_marginTop="10dp">
 
             <Button
-                android:id="@+id/feature3"
+                android:id="@+id/btnCITMap"
                 android:layout_width="155dp"
                 android:layout_height="wrap_content"
-                android:text="Feature"
+                android:text="CIT MAP"
                 android:textSize="7pt"/>
 
             <Space
