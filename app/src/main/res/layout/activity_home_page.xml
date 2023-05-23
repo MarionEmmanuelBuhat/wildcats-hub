@@ -95,12 +95,14 @@
             android:layout_gravity="center"
             android:layout_marginTop="40dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/taskmaster"
-                android:layout_width="155dp"
-                android:layout_height="wrap_content"
-                android:text="@string/taskmaster"
-                android:textSize="7pt"/>
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/taskmastericon"
+                android:textSize="7pt"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/taskmaster"/>
 
             <Space
                 android:layout_width="wrap_content"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class HomePage extends AppCompatActivity {
 
@@ -13,7 +14,7 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        Button taskmasterBtn = findViewById(R.id.taskmaster);
+        ImageButton taskmasterBtn = findViewById(R.id.taskmaster);
         Button directoriesBtn = findViewById(R.id.directory);
         Button mapBtn = findViewById(R.id.btnCITMap);
 
