@@ -61,25 +61,69 @@
             app:layout_constraintVertical_bias="1.0">
 
 
-
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp">
 
                 <TextView
+                    android:id="@+id/office"
+                    android:layout_width="156dp"
+                    android:layout_height="20dp"
+                    android:text="OFFICES"
+                    android:background="@color/maroon"
+                    android:textColor="@color/gold"
+                    android:layout_gravity="center"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+
+                    android:id="@+id/emails"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:gravity="center_horizontal"
+                    android:text="EMAILS"
+                    android:background="@color/maroon"
+                    android:textColor="@color/gold"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
                     android:id="@+id/f2"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Alumni Affairs Office" />
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Alumni Affairs Office"
+                    />
+
+
 
                 <TextView
+
                     android:id="@+id/f3"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="alumni@cit.edu" />
+
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="alumni@cit.edu"
+                    />
             </TableRow>
 
             <TableRow
@@ -91,15 +135,23 @@
                     android:id="@+id/f4"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+                    android:text="Athletics Department"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"/>
+
+
 
                 <TextView
                     android:id="@+id/f5"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="athletics@cit.edu" />
             </TableRow>
 
             <TableRow
@@ -111,15 +163,24 @@
                     android:id="@+id/f6"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+
+                    android:text="Center For Advanced Studies (Graduate School)"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/f7"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="alexander.franco@gmail.com"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <TableRow
@@ -131,15 +192,21 @@
                     android:id="@+id/f8"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Central Visayas Food Innovation Center" />
 
                 <TextView
                     android:id="@+id/f9"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="cvfic@cit.edu" />
             </TableRow>
 
             <TableRow
@@ -151,15 +218,21 @@
                     android:id="@+id/f10"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Civil Welfare Training Service" />
 
                 <TextView
                     android:id="@+id/f11"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="cwts@cit.edu" />
             </TableRow>
 
             <TableRow
@@ -171,15 +244,21 @@
                     android:id="@+id/f12"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Community Extension Services" />
 
                 <TextView
                     android:id="@+id/f13"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="ces@cit.edu" />
             </TableRow>
 
             <TableRow
@@ -191,15 +270,21 @@
                     android:id="@+id/f14"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Center for Robotics, eLearning And Technology Education" />
 
                 <TextView
                     android:id="@+id/f15"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="create@cit.edu" />
             </TableRow>
 
             <TableRow
@@ -210,16 +295,22 @@
                 <TextView
                     android:id="@+id/g1"
                     android:layout_width="156dp"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+                    android:text="Elementary Department" />
 
                 <TextView
                     android:id="@+id/g2"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="elem@cit.edu"/>
             </TableRow>
 
             <TableRow
@@ -231,15 +322,21 @@
                     android:id="@+id/g3"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Enrollment Technical Office" />
 
                 <TextView
                     android:id="@+id/g4"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="eto@cit.edu" />
             </TableRow>
 
             <TableRow
@@ -251,15 +348,21 @@
                     android:id="@+id/g5"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="ETEEAP Center" />
 
                 <TextView
                     android:id="@+id/g6"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="eteeap@cit.edu" />
             </TableRow>
 
             <TableRow
@@ -270,6 +373,9 @@
                 <TextView
                     android:id="@+id/g7"
                     android:layout_width="156dp"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
                     android:layout_height="match_parent"
                     android:text="Finance and Accounting Office" />
 
@@ -278,7 +384,10 @@
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
                     android:text="accounting@cit.edu" />
             </TableRow>
 
@@ -291,15 +400,177 @@
                     android:id="@+id/g9"
                     android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:text="Finance and Accounting Office" />
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Guidance Center" />
 
                 <TextView
                     android:id="@+id/g10"
                     android:layout_width="230dp"
                     android:layout_height="50dp"
                     android:autoLink="email"
-                    android:gravity="center_horizontal"
-                    android:text="accounting@cit.edu" />
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="guidance@cit.edu" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/g11"
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Guidance Center" />
+
+                <TextView
+                    android:id="@+id/g12"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:autoLink="email"
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="guidance@cit.edu" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/g13"
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="High School Registrar’s Office" />
+
+                <TextView
+                    android:id="@+id/g14"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:autoLink="email"
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="hs.records@cit.edu" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/g15"
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Instructional Materials and Publication Office" />
+
+                <TextView
+                    android:id="@+id/g16"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:autoLink="email"
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="impo@cit.edu" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/g17"
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Instructional Materials Distribution Center" />
+
+                <TextView
+                    android:id="@+id/g18"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:autoLink="email"
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="imdc@cit.edu" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/g19"
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Junior High School Department" />
+
+                <TextView
+                    android:id="@+id/g20"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:autoLink="email"
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="jhs@cit.edu" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/g21"
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:background="#8DC38888"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold"
+                    android:text="Makerspace" />
+
+                <TextView
+                    android:id="@+id/g22"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:autoLink="email"
+                    android:background="#8DC38888"
+                    android:textColorLink="#971818"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="makerspace@cit.edu" />
             </TableRow>
 
 
