@@ -15,7 +15,7 @@ public class pdfEmergency extends AppCompatActivity {
         setContentView(R.layout.activity_pdf_emergency);
 
 
-        pdfView = findViewById(R.id.pdfView);
+        pdfView = findViewById(R.id.pdfViewer);
         // Load the PDF file from assets folder
         pdfView.fromAsset("EMERGENCY.pdf")
                 .defaultPage(0)
