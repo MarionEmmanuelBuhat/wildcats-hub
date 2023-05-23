@@ -7,15 +7,67 @@
     android:background="@drawable/bgimgwhite"
     tools:context=".CITMap">
 
-    <Button
-        android:id="@+id/btnopenMaps"
-        android:layout_width="227dp"
-        android:layout_height="48dp"
-        android:text="@string/google_maps_cit_u"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toTopOf="@id/SVCITMap"/>
 
+
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appBarLayout"
+        app:menu="@menu/top_bar_menu"
+        app:navigationIcon="@drawable/baseline_menu_24"
+        app:navigationIconTint="@android:color/white"
+        app:title="CIT University Map"
+        app:titleCentered="true"
+        android:backgroundTint="@color/maroon"/>
+
+    <ScrollView
+
+        android:id="@+id/SVCITMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topAppBar">
+
+        <LinearLayout
+            android:id="@+id/layout_homepage"
+            android:layout_width="380dp"
+            android:layout_height="627dp"
+            android:layout_gravity="center_horizontal"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+    <ImageButton
+        android:id="@+id/btnopenMaps"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/directory"
+        android:scaleType="fitCenter"
+        android:src="@drawable/directoryicon"
+        android:textSize="7pt" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

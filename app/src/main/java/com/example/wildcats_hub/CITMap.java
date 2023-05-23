@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class CITMap extends AppCompatActivity {
 
@@ -13,14 +14,16 @@ public class CITMap extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citmap);
-        Button CITMapOpenBtn = findViewById(R.id.btnopenMaps);
+        ImageButton CITMapOpenBtn = findViewById(R.id.btnopenMaps);
 
         CITMapOpenBtn.setOnClickListener(view -> openCITGMaps());
+
     }
 
 
     public void openCITGMaps(){
-        Intent int_openMaps = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:10.2945,  123.8811"));
-        startActivity(int_openMaps);
+        String url = "https://maps.app.goo.gl/qcYPuLBSBAKM7iSr6";
+        Intent openMaps = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(openMaps);
     }
 }
