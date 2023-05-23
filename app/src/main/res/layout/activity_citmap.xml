@@ -59,14 +59,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0">
-    <ImageButton
-        android:id="@+id/btnopenMaps"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:contentDescription="@string/directory"
-        android:scaleType="fitCenter"
-        android:src="@drawable/directoryicon"
-        android:textSize="7pt" />
+
+            <ImageButton
+                android:id="@+id/btnopenMaps"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="GMaps"
+                android:background="@drawable/button_background"
+                android:scaleType="centerInside"
+                android:src="@drawable/gmaps"
+                android:textSize="7pt" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="10"/>
 
         </LinearLayout>
     </ScrollView>
