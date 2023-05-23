@@ -18,11 +18,13 @@ public class HomePage extends AppCompatActivity {
         ImageButton directoriesBtn = findViewById(R.id.directory);
         ImageButton mapBtn = findViewById(R.id.btnCITMap);
         ImageButton calendarBtn = findViewById(R.id.btnCalendar);
+        ImageButton emergency = findViewById(R.id.btnEmergency);
 
         taskmasterBtn.setOnClickListener(view -> openTaskmaster());
         directoriesBtn.setOnClickListener(view -> openDirectories());
         mapBtn.setOnClickListener(view -> openMap());
         calendarBtn.setOnClickListener(view -> openCalendarPage());
+        emergency.setOnClickListener(view -> openEmergency());
     }
 
     public void openTaskmaster(){
@@ -36,4 +38,5 @@ public class HomePage extends AppCompatActivity {
     public void openCalendarPage(){
         startActivity(new Intent(this, CollegeCalendar.class));
     }
+    public void openEmergency(){startActivity(new Intent(this, pdfEmergency.class));}
 }
