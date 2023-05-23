@@ -1,5 +1,6 @@
 package com.example.wildcats_hub;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -13,13 +14,16 @@ import android.widget.AutoCompleteTextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.textfield.TextInputEditText;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link NewTaskSheet#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class NewTaskSheet extends BottomSheetDialogFragment {
+public class NewTaskSheet extends BottomSheetDialogFragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,6 +33,20 @@ public class NewTaskSheet extends BottomSheetDialogFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private TextInputEditText taskNameEditText;
+    private TextInputEditText taskDescriptionEditText;
+    private AutoCompleteTextView priorityMenuAutoCompleteTextView;
+    private TextInputEditText taskTagsEditText;
+    private TextInputEditText taskduedate;
+    private TextInputEditText taskduetime;
+    private MaterialButton saveButton;
+    private String taskName;
+    private String taskDescription;
+    private String taskTag;
+    private String taskPriorityLevel;
+    private String taskDueDate;
+    private String taskDueTime;
 
 
     public NewTaskSheet() {
@@ -65,6 +83,46 @@ public class NewTaskSheet extends BottomSheetDialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_new_task_sheet, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_new_task_sheet, container, false);
+
+        taskNameEditText = rootView.findViewById(R.id.taskname);
+        taskDescriptionEditText = rootView.findViewById(R.id.taskdescription);
+        priorityMenuAutoCompleteTextView = rootView.findViewById(R.id.drop_priority_menu);
+        taskTagsEditText = rootView.findViewById(R.id.tasktags);
+        saveButton = rootView.findViewById(R.id.loginButton);
+        taskduedate = rootView.findViewById(R.id.taskduedate);
+        taskduetime = rootView.findViewById(R.id.taskduetime);
+
+        saveButton.setOnClickListener(this);
+
+        return rootView;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            // yyyy-MM-dd
+            // HH:mm:ss
+            // Save Button
+//            private String taskName;
+//            private String taskDescription;
+//            private String taskPriorityLevel;
+//            private String taskTag;
+//            private String taskDueDate;
+//            private String taskDueTime;
+            case R.id.loginButton:
+                taskName = taskNameEditText.getText().toString();
+                taskDescription = taskNameEditText.getText().toString();
+                taskPriorityLevel = priorityMenuAutoCompleteTextView.getText().toString();
+                taskTag = taskTagsEditText.getText().toString();
+                taskDueDate = taskduedate.getText().toString();
+                taskDueTime = taskduetime.getText().toString();
+                TaskDatabaseHelper db = new TaskDatabaseHelper(getActivity());
+                db.addTask(taskName.trim(), taskDescription.trim(), taskPriorityLevel.trim(),
+                        taskTag.trim(), taskDueDate.trim(), taskDueTime.trim());
+                TaskMaster parentActivity = (TaskMaster) getActivity();
+                parentActivity.reloadModels();
+                break;
+        }
     }
 }

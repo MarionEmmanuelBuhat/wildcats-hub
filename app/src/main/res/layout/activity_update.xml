@@ -24,7 +24,7 @@
         android:layout_marginVertical="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/taskname"
+            android:id="@+id/taskname2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Task Name">
@@ -49,7 +49,7 @@
         android:layout_marginVertical="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/taskdescription"
+            android:id="@+id/taskdescription2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Description">
@@ -75,7 +75,7 @@
         android:layout_marginVertical="10dp">
 
         <AutoCompleteTextView
-            android:id="@+id/drop_priority_menu"
+            android:id="@+id/drop_priority_menu2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@array/priority_levels"
@@ -100,7 +100,7 @@
         android:layout_marginVertical="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tasktags"
+            android:id="@+id/tasktags2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Chores">
@@ -125,7 +125,7 @@
         android:layout_marginVertical="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/taskduedate"
+            android:id="@+id/taskduedate2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="yyyy-MM-dd">
@@ -150,7 +150,7 @@
         android:layout_marginVertical="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/taskduetime"
+            android:id="@+id/taskduetime2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="HH:mm:ss">
@@ -159,17 +159,32 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/loginButton"
-        style="@style/Widget.Material3.Button"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="#2196F3"
-        android:text="Save"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/updateButton2"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#2196F3"
+            android:text="Update"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/deleteButton2"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#2196F3"
+            android:text="Delete"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
 
 </LinearLayout>
