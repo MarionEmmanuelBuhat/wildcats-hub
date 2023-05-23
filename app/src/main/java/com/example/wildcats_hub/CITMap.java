@@ -1,6 +1,7 @@
 package com.example.wildcats_hub;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import android.widget.ImageButton;
 
 public class CITMap extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +19,9 @@ public class CITMap extends AppCompatActivity {
         ImageButton CITMapOpenBtn = findViewById(R.id.btnopenMaps);
 
         CITMapOpenBtn.setOnClickListener(view -> openCITGMaps());
+
+
+
 
     }
 
