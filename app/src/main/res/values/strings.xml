@@ -23,4 +23,6 @@
     <string name="button">Button</string>
     <string name="google_maps_cit_u">Google Maps CIT- U</string>
     <string name="directory">Directory</string>
+    <string name="calendar">Calendar</string>
+    <string name="emergency">Emergency</string>
 </resources>
