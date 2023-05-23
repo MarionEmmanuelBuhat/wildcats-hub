@@ -14,11 +14,11 @@ public class CollegeCalendar extends AppCompatActivity {
         setContentView(R.layout.activity_college_calendar);
 
         ImageButton calendarPDF = findViewById(R.id.btnCalendarPDF);
-//        calendarPDF.setOnClickListener(view -> openCalendarPDF());
+        calendarPDF.setOnClickListener(view -> openCalendarPDF());
 
     }
 
-//    public void openCalendarPDF(){
-//        startActivity(new);
-//    }
+    public void openCalendarPDF(){
+        startActivity(new Intent(this, pdfActivity.class));
+    }
 }
