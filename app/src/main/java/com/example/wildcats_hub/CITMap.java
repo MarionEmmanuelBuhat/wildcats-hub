@@ -18,7 +18,6 @@ public class CITMap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citmap);
 
-
         ImageButton CITMapOpenBtn = findViewById(R.id.btnopenMaps);
         CITMapOpenBtn.setOnClickListener(view -> openCITGMaps());
     }
