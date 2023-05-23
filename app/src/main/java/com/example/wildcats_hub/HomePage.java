@@ -16,7 +16,7 @@ public class HomePage extends AppCompatActivity {
 
         ImageButton taskmasterBtn = findViewById(R.id.taskmaster);
         ImageButton directoriesBtn = findViewById(R.id.directory);
-        Button mapBtn = findViewById(R.id.btnCITMap);
+        ImageButton mapBtn = findViewById(R.id.btnCITMap);
 
         taskmasterBtn.setOnClickListener(view -> openTaskmaster());
         directoriesBtn.setOnClickListener(view -> openDirectories());
