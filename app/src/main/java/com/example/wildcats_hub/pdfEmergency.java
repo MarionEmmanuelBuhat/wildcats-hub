@@ -17,7 +17,7 @@ public class pdfEmergency extends AppCompatActivity {
 
         pdfView = findViewById(R.id.pdfViewer);
         // Load the PDF file from assets folder
-        pdfView.fromAsset("EMERGENCY.pdf")
+        pdfView.fromAsset("FOREMERGENCY.pdf")
                 .defaultPage(0)
 //                .enableSwipe(true)
 //                .swipeHorizontal(false)
