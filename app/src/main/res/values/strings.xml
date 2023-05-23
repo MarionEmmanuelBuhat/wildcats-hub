@@ -22,8 +22,18 @@
     <string name="taskmaster">Taskmaster</string>
     <string name="button">Button</string>
     <string name="google_maps_cit_u">Google Maps CIT- U</string>
+<<<<<<< Updated upstream
     <string name="directory">Directory</string>
     <string name="calendar">Calendar</string>
     <string name="emergency">Emergency</string>
     <string name="alexander_franco_delantar_gmail_com">alexander.franco.delantar@gmail.com</string>
+=======
+    <string-array name="priority_levels">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+>>>>>>> Stashed changes
 </resources>
