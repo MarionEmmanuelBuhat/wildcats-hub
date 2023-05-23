@@ -15,7 +15,7 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         ImageButton taskmasterBtn = findViewById(R.id.taskmaster);
-        Button directoriesBtn = findViewById(R.id.directory);
+        ImageButton directoriesBtn = findViewById(R.id.directory);
         Button mapBtn = findViewById(R.id.btnCITMap);
 
         taskmasterBtn.setOnClickListener(view -> openTaskmaster());

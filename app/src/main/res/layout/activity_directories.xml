@@ -27,7 +27,7 @@
         app:menu="@menu/top_bar_menu"
         app:navigationIcon="@drawable/baseline_menu_24"
         app:navigationIconTint="@android:color/white"
-        app:title="Tasks"
+        app:title="CIT University Directory"
         app:titleCentered="true" />
 
     <ScrollView
@@ -60,20 +60,6 @@
             app:layout_constraintVertical_bias="1.0">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="CIT University Directories"
-                android:textSize="18sp">
-
-            </TextView>
-
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp" />
 
             <TableRow
                 android:layout_width="match_parent"
