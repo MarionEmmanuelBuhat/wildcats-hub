@@ -1,22 +1,31 @@
 package com.example.wildcats_hub;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -92,8 +101,13 @@ public class NewTaskSheet extends BottomSheetDialogFragment implements View.OnCl
         saveButton = rootView.findViewById(R.id.loginButton);
         taskduedate = rootView.findViewById(R.id.taskduedate);
         taskduetime = rootView.findViewById(R.id.taskduetime);
+        taskduedate.setInputType(InputType.TYPE_NULL);
+        taskduetime.setInputType(InputType.TYPE_NULL);
+
 
         saveButton.setOnClickListener(this);
+        taskduedate.setOnClickListener(this);
+        taskduetime.setOnClickListener(this);
 
         return rootView;
     }
@@ -112,16 +126,63 @@ public class NewTaskSheet extends BottomSheetDialogFragment implements View.OnCl
 //            private String taskDueTime;
             case R.id.loginButton:
                 taskName = taskNameEditText.getText().toString();
-                taskDescription = taskNameEditText.getText().toString();
+                taskDescription = taskDescriptionEditText.getText().toString();
                 taskPriorityLevel = priorityMenuAutoCompleteTextView.getText().toString();
                 taskTag = taskTagsEditText.getText().toString();
                 taskDueDate = taskduedate.getText().toString();
                 taskDueTime = taskduetime.getText().toString();
+
+                if (taskName.isEmpty() || taskDescription.isEmpty() || taskPriorityLevel.isEmpty()
+                        || taskDueDate.isEmpty() || taskDueTime.isEmpty()) {
+                    Toast.makeText(getContext(), "Textfields must be non-empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 TaskDatabaseHelper db = new TaskDatabaseHelper(getActivity());
                 db.addTask(taskName.trim(), taskDescription.trim(), taskPriorityLevel.trim(),
                         taskTag.trim(), taskDueDate.trim(), taskDueTime.trim());
                 TaskMaster parentActivity = (TaskMaster) getActivity();
                 parentActivity.reloadModels();
+                break;
+            case R.id.taskduedate:
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        getContext(),
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int year, int monthofYear, int dayOfMonth) {
+                                String month = "";
+                                if (String.valueOf(monthofYear).length() == 1) {
+                                    month = "0" + (monthofYear+1);
+                                } else {
+                                    month = String.valueOf(monthofYear+1);
+                                }
+                                String selectedDate = year + "-" + month + "-" + dayOfMonth;
+                                taskduedate.setText(selectedDate);
+                            }
+                        },
+                        year,month,day
+                );
+                datePickerDialog.show();
+                break;
+            case R.id.taskduetime:
+
+                int hour = 0, minute = 0;
+                TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        taskduetime.setText(String.format(Locale.getDefault(),
+                                "%02d-%02d-00", selectedHour, selectedMinute));
+                    }
+                };
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), onTimeSetListener, hour, minute, false);
+
+                timePickerDialog.setTitle("Select Time");
+                timePickerDialog.show();
                 break;
         }
     }

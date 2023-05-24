@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,6 +27,7 @@ public class TaskModelAdapter extends RecyclerView.Adapter<TaskModelAdapter.MyVi
 
     Context context;
     ArrayList<TaskModel> taskModels;
+    String tags;
     Activity activity;
     int pst;
 
@@ -32,6 +35,10 @@ public class TaskModelAdapter extends RecyclerView.Adapter<TaskModelAdapter.MyVi
         this.activity = activity;
         this.context = context;
         this.taskModels = taskModels;
+    }
+
+    public String getTags() {
+        return tags;
     }
 
     @NonNull
@@ -61,6 +68,8 @@ public class TaskModelAdapter extends RecyclerView.Adapter<TaskModelAdapter.MyVi
 //        Light shade: #EF9A9A
 //        Main shade: #F44336
 //        Dark shade: #D32F2F
+        String tag = taskModels.get(position).getTags();
+        tags = tag;
 
         holder.taskName.setText(taskModels.get(position).getTaskName());
         if (taskModels.get(position).getPriorityLevel().equals("1")) {
@@ -79,8 +88,26 @@ public class TaskModelAdapter extends RecyclerView.Adapter<TaskModelAdapter.MyVi
             holder.tags.setText(taskModels.get(position).getTags());
         }
         if (formattedDate.equals(taskModels.get(position).getDueDate())) {
-            holder.dueTime.setText(taskModels.get(position).getDueTime());
+            String time = taskModels.get(position).getDueTime();
+            String newTime = "";
+            for (int i = 0; i < 5; i++) {
+                if (i == 2) {
+                    newTime += ":";
+                    continue;
+                }
+                newTime += String.valueOf(time.charAt(i));
+            }
+            DateFormat inputFormat = new SimpleDateFormat("HH:mm");
+            DateFormat outputFormat = new SimpleDateFormat("hh:mm a");
+            try {
+                Date date = inputFormat.parse(newTime);
+                newTime = outputFormat.format(date);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            holder.dueTime.setText(newTime);
         } else {
+            holder.dueTime.setText("");
             if (!taskModels.get(position).getTags().isEmpty()) {
                 holder.dueTime.setText(taskModels.get(position).getTags());
             }

@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
 
-    Button register;
+    Button register, homeButton;
     AccountDatabaseHelper myDB;
     EditText username, email, ins_email, pass, pass_conf;
     String username2, email2, ins_email2, pass2, pass_conf2;
@@ -28,6 +28,11 @@ public class Register extends AppCompatActivity {
         ins_email = findViewById(R.id.editTextCitEmail);
         pass = findViewById(R.id.editTextPassword);
         pass_conf = findViewById(R.id.editTextConfirmPassword);
+        homeButton = findViewById(R.id.homeButton);
+
+        homeButton.setOnClickListener(view -> {
+            startActivity(new Intent(this, MainActivity.class));
+        });
 
         register = findViewById(R.id.buttonRegister);
 
@@ -39,6 +44,11 @@ public class Register extends AppCompatActivity {
             ins_email2 = ins_email.getText().toString();
             pass2 = pass.getText().toString();
             pass_conf2 = pass_conf.getText().toString();
+            if (username2.isEmpty() || email2.isEmpty() || ins_email2.isEmpty() ||
+                    pass2.isEmpty() || pass_conf2.isEmpty()) {
+                Toast.makeText(this, "Textfields must be non-empty", Toast.LENGTH_SHORT).show();
+                return;
+            }
             if (!pass2.equals(pass_conf2)) {
                 Toast.makeText(this, "Invalid password", Toast.LENGTH_SHORT).show();
                 return;

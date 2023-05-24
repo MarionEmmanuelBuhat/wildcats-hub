@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(view -> {
             username = usernameEditText.getText().toString();
             password = passwordEditText.getText().toString();
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Textfields must be non-empty", Toast.LENGTH_SHORT).show();
+                return;
+            }
             AccountDatabaseHelper db = new AccountDatabaseHelper(MainActivity.this);
             if (db.loginAuthentication(username,password) == 0) {
                 Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
