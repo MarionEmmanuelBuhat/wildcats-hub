@@ -6,10 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
 
-    Button login;
+    Button register;
+    AccountDatabaseHelper myDB;
+    EditText username, email, ins_email, pass, pass_conf;
+    String username2, email2, ins_email2, pass2, pass_conf2;
 
 
     @Override
@@ -18,18 +23,29 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         Button register = findViewById(R.id.buttonRegister);
+        username = findViewById(R.id.editTextUsername);
+        email = findViewById(R.id.editTextEmail);
+        ins_email = findViewById(R.id.editTextCitEmail);
+        pass = findViewById(R.id.editTextPassword);
+        pass_conf = findViewById(R.id.editTextConfirmPassword);
 
-        login = findViewById(R.id.homeButton);
+        register = findViewById(R.id.buttonRegister);
 
-        login.setOnClickListener(view -> {
+        myDB = new AccountDatabaseHelper(Register.this);
+
+        register.setOnClickListener(view -> {
+            username2 = username.getText().toString();
+            email2 = email.getText().toString();
+            ins_email2 = ins_email.getText().toString();
+            pass2 = pass.getText().toString();
+            pass_conf2 = pass_conf.getText().toString();
+            if (!pass2.equals(pass_conf2)) {
+                Toast.makeText(this, "Invalid password", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            AccountDatabaseHelper db = new AccountDatabaseHelper(Register.this);
+            db.addAccount(username2, email2, ins_email2, pass2);
             startActivity(new Intent(this, MainActivity.class));
         });
-
-        register.setOnClickListener(view -> goLogin());
-    }
-
-    public void goLogin(){
-        Intent createLogin = new Intent(this, MainActivity.class);
-        startActivity(createLogin);
     }
 }
