@@ -7,20 +7,32 @@
             android:icon="@drawable/baseline_home_24"
             />
         <item android:id="@+id/directoryIC"
-            android:title="Home"
+            android:title="Directory"
             android:icon="@drawable/baseline_home_24"
             />
         <item android:id="@+id/mapIC"
-            android:title="Home"
+            android:title="CIT- U Map"
             android:icon="@drawable/baseline_home_24"
             />
         <item android:id="@+id/calendarIC"
-            android:title="Home"
+            android:title="Collegiate Calendar"
             android:icon="@drawable/baseline_home_24"
             />
         <item android:id="@+id/emerIC"
-            android:title="Home"
+            android:title="Emergency Access Points"
             android:icon="@drawable/baseline_home_24"
             />
     </group>
+
+    <item android:title="Profile">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/Logout"
+                    android:title="Log Out"
+                    android:icon="@drawable/baseline_home_24"
+                    />
+            </group>
+        </menu>
+    </item>
+
 </menu>
