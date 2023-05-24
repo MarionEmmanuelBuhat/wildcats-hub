@@ -75,7 +75,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/inter"
                 android:gravity="center"
-                android:text="Welcome, Raiza!"
+                android:text="Welcome, "
                 android:textColor="#B8860B"
                 android:textSize="32dp"
                 app:layout_constraintBottom_toTopOf="@+id/wildcatIV"

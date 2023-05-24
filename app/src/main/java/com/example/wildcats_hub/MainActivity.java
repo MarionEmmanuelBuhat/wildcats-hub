@@ -34,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Invalid username/password", Toast.LENGTH_SHORT).show();
                 return;
             }
-            startActivity(new Intent(this, HomePage.class));
+            Intent intent = new Intent(this, HomePage.class);
+            intent.putExtra("username", String.valueOf(username));
+            startActivity(intent);
         });
 
         register.setOnClickListener(view -> {
