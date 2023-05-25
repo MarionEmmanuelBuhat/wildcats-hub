@@ -6,17 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgimgwhite"
+    android:id="@id/layout_homepage"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:headerLayout="@layout/header"-->
+<!--        app:menu="@menu/main_menu"-->
+<!--        android:id="@+id/nav_view"-->
+<!--        android:layout_gravity="start" />-->
+
+
     <com.google.android.material.appbar.MaterialToolbar
+
         android:id="@+id/materialToolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#800000"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <ImageView
         android:id="@+id/logoIV"

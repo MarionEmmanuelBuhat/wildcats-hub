@@ -25,7 +25,8 @@
             app:navigationIcon="@drawable/baseline_menu_24"
             app:navigationIconTint="@android:color/white"
             app:title="CIT-U Collegiate Calendar"
-            app:titleCentered="true" />
+            app:titleCentered="true"
+            />
 
     </com.google.android.material.appbar.AppBarLayout>
 

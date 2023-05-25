@@ -1,6 +1,8 @@
 package com.example.wildcats_hub;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +10,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
+
 public class HomePage extends AppCompatActivity {
 
+    DrawerLayout draw_layout;
+    NavigationView navigation;
+    ActionBarDrawerToggle dToggle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +37,15 @@ public class HomePage extends AppCompatActivity {
         mapBtn.setOnClickListener(view -> openMap());
         calendarBtn.setOnClickListener(view -> openCalendarPage());
         emergency.setOnClickListener(view -> openEmergency());
+
+
+
+//        draw_layout = findViewById(R.id.homepage);
+//        navigation = findViewById(R.id.nav_view);
+//        dToggle = new ActionBarDrawerToggle(this, draw_layout,R.string.open,R.string.close);
+//        draw_layout.addDrawerListener(dToggle);
+//        dToggle.syncState();
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void openTaskmaster(){
