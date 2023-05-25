@@ -2,13 +2,23 @@ package com.example.wildcats_hub;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Calendar;
+import java.util.Locale;
 
 public class UpdateActivity extends AppCompatActivity {
 
@@ -36,11 +46,60 @@ public class UpdateActivity extends AppCompatActivity {
         updateButton = findViewById(R.id.updateButton2);
         getIntentData();
 
+        taskduedate.setInputType(InputType.TYPE_NULL);
+        taskduetime.setInputType(InputType.TYPE_NULL);
+
+        taskduedate.setOnClickListener(view -> {
+            Calendar calendar = Calendar.getInstance();
+            int year = calendar.get(Calendar.YEAR);
+            int month = calendar.get(Calendar.MONTH);
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(
+                    this,
+                    new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker datePicker, int year, int monthofYear, int dayOfMonth) {
+                            String month = "";
+                            if (String.valueOf(monthofYear).length() == 1) {
+                                month = "0" + (monthofYear+1);
+                            } else {
+                                month = String.valueOf(monthofYear+1);
+                            }
+                            String selectedDate = year + "-" + month + "-" + dayOfMonth;
+                            taskduedate.setText(selectedDate);
+                        }
+                    },
+                    year,month,day
+            );
+            datePickerDialog.show();
+        });
+        taskduetime.setOnClickListener(view -> {
+            int hour = 0, minute = 0;
+            TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                @Override
+                public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                    taskduetime.setText(String.format(Locale.getDefault(),
+                            "%02d-%02d-00", selectedHour, selectedMinute));
+                }
+            };
+            TimePickerDialog timePickerDialog = new TimePickerDialog(this, onTimeSetListener, hour, minute, false);
+
+            timePickerDialog.setTitle("Select Time");
+            timePickerDialog.show();
+        });
+
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 TaskDatabaseHelper myDB = new TaskDatabaseHelper(UpdateActivity.this);
                 updateData();
+                if (id.isEmpty() || taskname.isEmpty() || description.isEmpty() || priority.isEmpty()
+                        || duedate.isEmpty() || duetime.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Textfields must be non-empty",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 myDB.updateData(id, taskname, description, priority, tag, duedate, duetime);
             }
         });

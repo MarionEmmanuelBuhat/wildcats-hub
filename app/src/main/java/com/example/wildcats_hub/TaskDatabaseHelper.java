@@ -11,38 +11,6 @@ import androidx.annotation.Nullable;
 
 public class TaskDatabaseHelper extends SQLiteOpenHelper {
 
-    Cursor readAllData() {
-        String query = "SELECT * FROM " + TABLE_NAME;
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor cursor = null;
-        if (db != null) {
-            cursor = db.rawQuery(query, null);
-        }
-        return cursor;
-    }
-
-    void updateData(String id, String taskName, String taskDescription, String taskPriorityLevel,
-                    String taskTag, String taskDueDate, String taskDueTime) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-
-        cv.put(COLUMN_ID, id);
-        cv.put(COLUMN_TASKNAME, taskName);
-        cv.put(COLUMN_DESCRIPTION, taskDescription);
-        cv.put(COLUMN_PRIORITYLEVEL, taskPriorityLevel);
-        cv.put(COLUMN_TAG, taskTag);
-        cv.put(COLUMN_DUEDATE, taskDueDate);
-        cv.put(COLUMN_DUETIME, taskDueTime);
-
-        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{id});
-        if (result == -1) {
-            Toast.makeText(context, "Failed to Update", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(context, "Successfully Updated", Toast.LENGTH_SHORT).show();
-        }
-    }
-
     private Context context;
     private static final String DATABASE_NAME = "task.db";
     private static final int DATABASE_VERSION = 1;
@@ -82,6 +50,13 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
     void addTask(String taskName, String taskDescription, String taskPriorityLevel,
                  String taskTag, String taskDueDate, String taskDueTime) {
         SQLiteDatabase db = this.getWritableDatabase();
+
+        boolean tableExists = isTableExists(TABLE_NAME, db);
+        if (!tableExists) {
+            // Table doesn't exist, create it
+            createTable(db);
+        }
+
         ContentValues cv = new ContentValues();
 
         cv.put(COLUMN_TASKNAME, taskName);
@@ -106,5 +81,64 @@ public class TaskDatabaseHelper extends SQLiteOpenHelper {
         } else {
             Toast.makeText(context, "Failed to delete task.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    Cursor readAllData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (db != null) {
+            // Check if the table exists
+            if (isTableExists(TABLE_NAME, db)) {
+                String query = "SELECT * FROM " + TABLE_NAME;
+                cursor = db.rawQuery(query, null);
+            }
+        }
+        return cursor;
+    }
+
+    private boolean isTableExists(String tableName, SQLiteDatabase db) {
+        String query = "SELECT DISTINCT tbl_name FROM sqlite_master WHERE tbl_name = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{tableName});
+        boolean tableExists = cursor != null && cursor.getCount() > 0;
+        if (cursor != null) {
+            cursor.close();
+        }
+        return tableExists;
+    }
+
+    void updateData(String id, String taskName, String taskDescription, String taskPriorityLevel,
+                    String taskTag, String taskDueDate, String taskDueTime) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_ID, id);
+        cv.put(COLUMN_TASKNAME, taskName);
+        cv.put(COLUMN_DESCRIPTION, taskDescription);
+        cv.put(COLUMN_PRIORITYLEVEL, taskPriorityLevel);
+        cv.put(COLUMN_TAG, taskTag);
+        cv.put(COLUMN_DUEDATE, taskDueDate);
+        cv.put(COLUMN_DUETIME, taskDueTime);
+
+        long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{id});
+        if (result == -1) {
+            Toast.makeText(context, "Failed to Update", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Successfully Updated", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Helper method to create the table if it doesn't exist
+    private void createTable(SQLiteDatabase db) {
+        String createTableQuery = "CREATE TABLE " + TABLE_NAME + " (" +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_TASKNAME + " TEXT, " +
+                COLUMN_DESCRIPTION + " TEXT, " +
+                COLUMN_PRIORITYLEVEL + " TEXT, " +
+                COLUMN_TAG + " TEXT, " +
+                COLUMN_DUEDATE + " TEXT, " +
+                COLUMN_DUETIME + " TEXT)";
+
+        db.execSQL(createTableQuery);
     }
 }

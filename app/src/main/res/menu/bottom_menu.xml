@@ -11,9 +11,4 @@
         android:icon="@drawable/arrows_up_down_solid"
         android:title="Sort Task"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/taskcalendar"
-        android:icon="@drawable/calendar_regular"
-        android:title="Calendar Views"
-        app:showAsAction="ifRoom" />
 </menu>

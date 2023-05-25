@@ -82,7 +82,6 @@ public class AccountDatabaseHelper extends SQLiteOpenHelper {
             return 1;
         } else {
             // No data exists matching the selection criteria
-            Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show();
         }
         return 0;
     }
