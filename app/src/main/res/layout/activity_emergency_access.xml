@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgimgwhite"
+    tools:context=".CITMap">
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toTopOf="@id/SVCITEmergency"/>
+
+
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appBarLayout"
+        app:menu="@menu/top_bar_menu"
+        app:navigationIcon="@drawable/baseline_menu_24"
+        app:navigationIconTint="@android:color/white"
+        app:title="Emergency Access Points"
+        app:titleCentered="true"
+        android:backgroundTint="@color/maroon"/>
+
+    <ScrollView
+
+        android:id="@+id/SVCITEmergency"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topAppBar">
+
+        <LinearLayout
+            android:id="@+id/layout_homepage"
+            android:layout_width="380dp"
+            android:layout_height="627dp"
+            android:layout_gravity="center_horizontal"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ImageButton
+                android:id="@+id/btnopenEmergencypdf"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="PDFEMergency"
+                android:background="@drawable/button_img_bg"
+                android:scaleType="centerInside"
+                android:src="@drawable/emergencypdf"
+                android:textSize="7pt" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="10"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:background="@color/maroon"
+                android:gravity="center_horizontal"
+                android:text="Send Message"
+                android:textColor="@color/gold"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="10"/>
+
+
+            <LinearLayout
+                android:layout_width="331dp"
+                android:layout_height="276dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.445"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                >
+
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <EditText
+                    android:id="@+id/editTextNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:ems="11"
+                    android:hint="@string/enter_phone_number"
+                    android:inputType="phone" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+
+                <EditText
+                    android:id="@+id/editTextMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:ems="10"
+                    android:hint="@string/enter_message"
+                    android:inputType="textLongMessage" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="casual"
+                    android:text="@string/send_message"
+                    android:textColor="#FFEB3B"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#730505" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <Button
+                    android:id="@+id/btnClear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="casual"
+                    android:text="@string/clear"
+                    android:textColor="#FFEB3B"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#730505" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:background="@color/maroon"
+                android:gravity="center_horizontal"
+                android:text="Call Number"
+                android:textColor="@color/gold"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <LinearLayout
+                android:layout_width="331dp"
+                android:layout_height="276dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.445"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                >
+
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <EditText
+                    android:id="@+id/editTxtCall"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:ems="11"
+                    android:hint="@string/enter_phone_number"
+                    android:inputType="phone" />
+
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <Button
+                    android:id="@+id/btnCall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="casual"
+                    android:text="CALL NUMBER"
+                    android:textColor="#FFEB3B"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#730505" />
+
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

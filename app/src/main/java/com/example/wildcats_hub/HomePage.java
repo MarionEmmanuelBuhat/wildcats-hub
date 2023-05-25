@@ -39,8 +39,8 @@ public class HomePage extends AppCompatActivity {
         emergency.setOnClickListener(view -> openEmergency());
 
 
-
-//        draw_layout = findViewById(R.id.homepage);
+//
+//        draw_layout = findViewById(R.id.layout_homepage);
 //        navigation = findViewById(R.id.nav_view);
 //        dToggle = new ActionBarDrawerToggle(this, draw_layout,R.string.open,R.string.close);
 //        draw_layout.addDrawerListener(dToggle);
@@ -59,5 +59,5 @@ public class HomePage extends AppCompatActivity {
     public void openCalendarPage(){
         startActivity(new Intent(this, CollegeCalendar.class));
     }
-    public void openEmergency(){startActivity(new Intent(this, pdfEmergency.class));}
+    public void openEmergency(){startActivity(new Intent(this, EmergencyAccess.class));}
 }
